@@ -2,6 +2,8 @@
 
 このリポジトリは、Cloudflare Pages へのデプロイ実験を目的としたサンプル React サイトです。
 
+[https://test-cloudflare-app-001.pages.dev/](https://test-cloudflare-app-001.pages.dev/)
+
 ## 概要
 
 - **目的**: Cloudflare Pages へのデプロイ手順や挙動を検証するためのテスト用プロジェクトです。
