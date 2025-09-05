@@ -1,4 +1,4 @@
-# react-demo-site
+# test_cloudflare_app_001
 
 - このリポジトリは、Cloudflare Pages へのデプロイ実験を目的としたサンプル React サイトです。  
 - 2025/09/05 時点でのkiroの一般的で典型的なサイト生成での消費Vibe/Spec調査を兼ねています。
