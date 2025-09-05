@@ -1,0 +1,151 @@
+/* Header Component Styles */
+.header {
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+}
+
+.logo h2 {
+  color: var(--primary-color);
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.navLinks {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.navLink {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.navLink:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  padding: var(--spacing-sm);
+  gap: 4px;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s ease;
+}
+
+.mobileMenuButton:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.mobileMenuButton:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.hamburger {
+  width: 24px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* ハンバーガーメニューのアニメーション */
+.mobileMenuButton .hamburger:nth-child(1).hamburgerActive {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobileMenuButton .hamburger:nth-child(2).hamburgerActive {
+  opacity: 0;
+}
+
+.mobileMenuButton .hamburger:nth-child(3).hamburgerActive {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .nav {
+    position: relative;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    gap: var(--spacing-sm);
+  }
+
+  .navLinksOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: left;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+  }
+
+  .mobileMenuButton {
+    display: flex;
+  }
+}
+
+/* アクセシビリティ対応 */
+@media (prefers-reduced-motion: reduce) {
+  .navLinks,
+  .hamburger,
+  .navLink {
+    transition: none;
+  }
+}
+
+/* フォーカス表示の改善 */
+@media (prefers-contrast: high) {
+  .navLink:focus,
+  .mobileMenuButton:focus {
+    outline: 3px solid var(--primary-color);
+  }
+}

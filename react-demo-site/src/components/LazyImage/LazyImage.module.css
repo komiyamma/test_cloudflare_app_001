@@ -1,0 +1,47 @@
+.lazyImageContainer {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.lazyImage {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazyImage.loaded {
+  opacity: 1;
+}
+
+.lazyImage.error {
+  opacity: 0;
+}
+
+.placeholder,
+.errorState {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+}
+
+.errorState {
+  background-color: #fef2f2;
+  color: var(--error-color);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .lazyImage {
+    transition: none;
+  }
+}

@@ -1,0 +1,45 @@
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-color);
+  color: white;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  z-index: 1000;
+  font-weight: 600;
+  transition: top 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.skipLink:focus {
+  top: 6px;
+  outline: none;
+  border-color: white;
+}
+
+.skipLink:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .skipLink {
+    border: 2px solid white;
+  }
+  
+  .skipLink:focus {
+    background: white;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skipLink {
+    transition: none;
+  }
+}
